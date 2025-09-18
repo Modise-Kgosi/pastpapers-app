@@ -1,0 +1,212 @@
+/* Register page specific styles */
+.register-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.register-card {
+  background: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.register-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1f2937;
+}
+
+.register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-animated {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  background: transparent;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  border-radius: 0;
+}
+
+.input-animated::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000 !important;
+  animation: loading-bar 1.5s ease-in-out infinite;
+}
+
+.input-animated::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.input-animated:focus {
+  border-bottom-color: #6366f1;
+  background-color: #fafafa;
+}
+
+.input-animated:focus::before {
+  animation: none;
+  width: 100%;
+  background: #000000 !important;
+}
+
+.input-animated:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.input-animated:focus {
+  animation: underline-grow 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+@keyframes underline-grow {
+  0% {
+    border-bottom-color: #e5e7eb;
+    border-bottom-width: 2px;
+    box-shadow: 0 2px 0 0 transparent;
+  }
+  100% {
+    border-bottom-color: #6366f1;
+    border-bottom-width: 2px;
+    box-shadow: 0 2px 0 0 #6366f1;
+  }
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #111827;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 2rem;
+}
+
+.btn-primary:hover {
+  background-color: #1f2937;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.oauth-buttons {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-google {
+  width: 100%;
+  background-color: #ef4444;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-google:hover {
+  background-color: #dc2626;
+}
+
+.btn-microsoft {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-microsoft:hover {
+  background-color: #1d4ed8;
+}
+
+.error-message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #ef4444;
+  font-size: 0.875rem;
+}
+
+.signup-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.signup-link p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}

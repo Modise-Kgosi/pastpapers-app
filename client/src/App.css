@@ -1,8 +1,26 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide everything when on auth pages */
+.auth-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #f9fafb;
+}
+
+/* Ensure navbar is never visible on auth pages */
+.auth-page .navbar,
+.auth-page nav {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .logo {
