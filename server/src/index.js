@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 
 import papersRouter from "./routes/papers.js";
 import authRouter from "./routes/auth.js";
+import coursesRouter from "./routes/courses.js";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 // Routes
 app.use("/api/papers", papersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/courses", coursesRouter);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
